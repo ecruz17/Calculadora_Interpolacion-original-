@@ -54,17 +54,18 @@
 
 header {
     text-align: center;
-    background:rgb(175, 27, 27);
+    background: #0B1D24;
     grid-area: header;
+    color: white;
 }
 
 #main {
-    background: red;
+    background: #3B9DC3;
     grid-area: main;
 }
 
 footer {
-    background-color: rgb(124, 31, 31);
+    background-color: #0B1D24;
     grid-area: footer;
 }
 
