@@ -34,7 +34,7 @@ interpolacionLagrange1erOrden(x,x0,fx0,x1,fx1){
 }
 
 interpolacionLagrange2doOrden(x,x0,fx0,x1,fx1,x2,fx2){
-    
+    return ((x-x1/x0-x1)(x-x2/x0-x2))(fx0)+((x-x0/x1-x0)(x-x2/x1-x2))(fx1)+((x-x0/x2-x0)(x-x1/x2-x1))(fx2);
 }
 
 
