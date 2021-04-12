@@ -1,11 +1,4 @@
-//NO BORRAR, animación de carga
-window.addEventListener("load", function() {
-    const LOADER = document.querySelector(".loader");
-    LOADER.className += ' hidden';
-});
-
-
-export default class App{
+export default class App {
 
 //Formulas de interpolación
 interpolacionLineal(x,x0,fx0,x1,fx1){
@@ -41,7 +34,25 @@ interpolacionLagrange2doOrden(x,x0,fx0,x1,fx1,x2,fx2){
 
 }
 
+function reiniciarLineal()
+    {
+        document.getElementById('x1').value='';
+        document.getElementById('y1').value='';
+        document.getElementById('x2').value='';
+        document.getElementById('y2').value='';
+        document.getElementById('x3').value='';
+        document.getElementById('y3').value='';
+    }
 
-let app= new App();
+
+let app = new App();
 
 console.log(interpolacionLineal(6,0,5,14,7,22));
+
+/*Animacion de carga
+window.addEventListener("load", function() {
+    const LOADER = document.querySelector(".loader");
+    LOADER.className += ' hidden';
+    });
+    */
+
