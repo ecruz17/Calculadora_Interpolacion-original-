@@ -7,9 +7,10 @@
     <title>Calculadora de Interpolación</title>
     <link rel="stylesheet" href="style.css">
     <script src="script.js"></script>
+    
 </head>
 <body>
-        <div class="loader">
+        <div class="loader hidden">
             <img src="loading.gif" alt="Loading..."/>
         </div>
 
@@ -18,15 +19,54 @@
             <h2>Calculadora de Interpolación</h2>
         </header>
         <div id="main">Main
-           
+           <table class="IntLineal">
+               <tbody class="IntLinealBody">
+                        <tr>
+                            <td><input id="x1" style="width: 145px; height: 30px;" type="text" placeholder="Valor X1"></td>
+                            <td><input id="y1" style="width: 145px; height: 30px;" type="text" placeholder="Valor Y1"></td>
+                        </tr>
+                        <tr>
+                            <td><input id="x3" style="width: 145px; height: 30px;" type="text" placeholder="X (Valor conocido)"></td>
+                            <td><input id="y3" style="width: 145px; height: 30px; color: #ffffff; background-color: #8ae268;" disabled="disabled" type="text" placeholder="Y (Resultaod)"></td>
+                        </tr>
+                        <tr>
+                            <td><input id="x2" style="width: 145px; height: 30px;" type="text" placeholder="Valor X2"></td>
+                            <td><input id="y2" style="width: 145px; height: 30px;" type="text" placeholder="Valor Y2"></td>
+                        </tr>
+                        <tr>
+                            <td colspan="2"><input type="button" value="Calcular" onclick="calcularLineal()"><input type="button" value="Reiniciar" onclick="reiniciarLineal()"></td>
+                        </tr>
+               </tbody>
+           </table>
         </div> 
     <footer id="footer">Footer</footer>
     </div>
-</body>
-    <script>
-    window.addEventListener("load", function() {
-    const LOADER = document.querySelector(".loader");
-    LOADER.className += ' hidden';
-    });
-    </script>
+
+        <script type="text/javascript" id="sns_scripts">function calcularLineal()
+        {
+        var x1=parseFloat(document.getElementById('x1').value);
+        var y1=parseFloat(document.getElementById('y1').value);
+        var x2=parseFloat(document.getElementById('x2').value);
+        var y2=parseFloat(document.getElementById('y2').value);
+        var x3=parseFloat(document.getElementById('x3').value);
+        var y3=parseFloat(document.getElementById('y3').value);
+        
+            
+        y3 = y1 + (x3-x1)*((y2-y1)/(x2-x1));
+        document.getElementById('y3').value=y3;
+        //document.getElementById('grafica').innerHTML = "[wp_charts title='linechart' type='line' align='aligncentre' margin='5px 20px' datasets='0,0,0' labels='x1, x, x2']";
+        
+        }
+        function reiniciarLineal()
+        {
+        document.getElementById('x1').value='';
+        document.getElementById('y1').value='';
+        document.getElementById('x2').value='';
+        document.getElementById('y2').value='';
+        document.getElementById('x3').value='';
+        document.getElementById('y3').value='';
+        } 
+        </script>
+    
+    </body>
 </html>
