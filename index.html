@@ -5,9 +5,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calculadora de Interpolación</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="style.css">
-    <script src="script.js"></script>
-    
+    <script type = "text/javascript" src="interpolacion-lineal.js"></script>
 </head>
 <body>
         <div class="loader hidden">
@@ -18,8 +18,18 @@
         <header id="header">
             <h2>Calculadora de Interpolación</h2>
         </header>
-        <div id="main">Main
-           <table class="IntLineal">
+        <div id="main">
+            <table class="Calculators">
+                <tbody class="IntLinealBody">
+                    <tr>
+                        <td><input id="showIntLineal" type="button" value="Interpolación Lineal" onclick="showLineal()">
+                            <input id="showIntCuadratica" type="button" value="Interpolación Cuadrática" onclick="showCuadratica()">
+                            <input id="showIntLagrange1" type="button" value="Interpolación de Lagrange 1° Orden" onclick="showLagrange1()">
+                            <input id="showIntLagrange2" type="button" value="Interpolación de Lagrange 2° Orden" onclick="showLagrange2()">
+                    </tr>
+            </table>
+
+           <table class="IntLineal"> <p>Interpolación Lineal</p> 
                <tbody class="IntLinealBody">
                         <tr>
                             <td><input id="x1" style="width: 145px; height: 30px;" type="text" placeholder="Valor X0"></td>
@@ -35,7 +45,7 @@
                         </tr>
                         <tr>
                             <td colspan="2"><input type="button" value="Calcular" onclick="calcularLineal()"><input type="button" value="Reiniciar" onclick="reiniciarLineal()"></td>
-                            <td><input id="decimales" style="width: 145px; height: 30px;" type="number" placeholder="N de Decimales"></td>
+                            <td><input id="decimales" style="width: 145px; height: 30px;" type="number" min="0" placeholder="N° de Decimales"></td>
                         </tr>
                         <tr>
                             <td><input id="valorReal" type="text" style="width: 145px; height: 30px;" placeholder="Valor Real" disabled="disabled"></td>
@@ -45,24 +55,24 @@
         </div> 
     <footer id="footer">Footer</footer>
     </div>
+        
+        <script>
+            /*
+            function calcularLineal() {
 
-        <script type="text/javascript" id="linear_script">function calcularLineal() {
             var x1=parseFloat(document.getElementById('x1').value);
             var y1=parseFloat(document.getElementById('y1').value);
             var x2=parseFloat(document.getElementById('x2').value);
             var y2=parseFloat(document.getElementById('y2').value);
             var x3=parseFloat(document.getElementById('x3').value);
             var y3=parseFloat(document.getElementById('y3').value);
-            var decimales=parseFloat(document.getElementById('decimales').value);
-            
+            var decimales=parseFloat(document.getElementById('decimales').value);      
                 
             y3 = (y1 + (x3-x1)*((y2-y1)/(x2-x1)));
             let res = this.truncateDecimals(y3, decimales);
             document.getElementById('y3').value=res;
-           
             
         }
-
 
         function reiniciarLineal() {
         document.getElementById('x1').value='';
@@ -71,6 +81,7 @@
         document.getElementById('y2').value='';
         document.getElementById('x3').value='';
         document.getElementById('y3').value='';
+        document.getElementById('decimales').value='';
         } 
 
         truncateDecimals = function (number, digits) {
@@ -81,8 +92,7 @@
 
         return truncatedNum / multiplier;
 
-        };
-
+        }; */
         </script>
 
     </body>
