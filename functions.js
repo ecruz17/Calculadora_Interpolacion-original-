@@ -1,8 +1,7 @@
-$.get('index.html', null, function(text){
-    alert($(text).find('#x1'));
-});
 
-function calcularLineal()
+
+
+/* function calcularLineal()
         {
         var x1=parseFloat(document.getElementById('x1').value);
         var y1=parseFloat(document.getElementById('y1').value);
@@ -26,5 +25,5 @@ function calcularLineal()
         document.getElementById('y2').value='';
         document.getElementById('x3').value='';
         document.getElementById('y3').value='';
-    }
+    } */
         
