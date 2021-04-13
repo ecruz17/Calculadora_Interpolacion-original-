@@ -22,19 +22,23 @@
            <table class="IntLineal">
                <tbody class="IntLinealBody">
                         <tr>
-                            <td><input id="x1" style="width: 145px; height: 30px;" type="text" placeholder="Valor X1"></td>
-                            <td><input id="y1" style="width: 145px; height: 30px;" type="text" placeholder="Valor Y1"></td>
+                            <td><input id="x1" style="width: 145px; height: 30px;" type="text" placeholder="Valor X0"></td>
+                            <td><input id="y1" style="width: 145px; height: 30px;" type="text" placeholder="Valor F(X0)"></td>
                         </tr>
                         <tr>
                             <td><input id="x3" style="width: 145px; height: 30px;" type="text" placeholder="X (Valor conocido)"></td>
-                            <td><input id="y3" style="width: 145px; height: 30px; color: #ffffff; background-color: #8ae268;" disabled="disabled" type="text" placeholder="Y (Resultaod)"></td>
+                            <td><input id="y3" style="width: 145px; height: 30px; color: #ffffff; background-color: #8ae268;" disabled="disabled" type="text" placeholder="Y (Resultado)"></td>
                         </tr>
                         <tr>
-                            <td><input id="x2" style="width: 145px; height: 30px;" type="text" placeholder="Valor X2"></td>
-                            <td><input id="y2" style="width: 145px; height: 30px;" type="text" placeholder="Valor Y2"></td>
+                            <td><input id="x2" style="width: 145px; height: 30px;" type="text" placeholder="Valor X1"></td>
+                            <td><input id="y2" style="width: 145px; height: 30px;" type="text" placeholder="Valor F(X1)"></td>
                         </tr>
                         <tr>
                             <td colspan="2"><input type="button" value="Calcular" onclick="calcularLineal()"><input type="button" value="Reiniciar" onclick="reiniciarLineal()"></td>
+                            <td><input id="decimales" style="width: 145px; height: 30px;" type="number" placeholder="N de Decimales"></td>
+                        </tr>
+                        <tr>
+                            <td><input id="valorReal" type="text" style="width: 145px; height: 30px;" placeholder="Valor Real" disabled="disabled"></td>
                         </tr>
                </tbody>
            </table>
@@ -42,23 +46,25 @@
     <footer id="footer">Footer</footer>
     </div>
 
-        <script type="text/javascript" id="sns_scripts">function calcularLineal()
-        {
-        var x1=parseFloat(document.getElementById('x1').value);
-        var y1=parseFloat(document.getElementById('y1').value);
-        var x2=parseFloat(document.getElementById('x2').value);
-        var y2=parseFloat(document.getElementById('y2').value);
-        var x3=parseFloat(document.getElementById('x3').value);
-        var y3=parseFloat(document.getElementById('y3').value);
-        
+        <script type="text/javascript" id="linear_script">function calcularLineal() {
+            var x1=parseFloat(document.getElementById('x1').value);
+            var y1=parseFloat(document.getElementById('y1').value);
+            var x2=parseFloat(document.getElementById('x2').value);
+            var y2=parseFloat(document.getElementById('y2').value);
+            var x3=parseFloat(document.getElementById('x3').value);
+            var y3=parseFloat(document.getElementById('y3').value);
+            var decimales=parseFloat(document.getElementById('decimales').value);
             
-        y3 = y1 + (x3-x1)*((y2-y1)/(x2-x1));
-        document.getElementById('y3').value=y3;
-        //document.getElementById('grafica').innerHTML = "[wp_charts title='linechart' type='line' align='aligncentre' margin='5px 20px' datasets='0,0,0' labels='x1, x, x2']";
-        
+                
+            y3 = (y1 + (x3-x1)*((y2-y1)/(x2-x1)));
+            let res = this.truncateDecimals(y3, decimales);
+            document.getElementById('y3').value=res;
+           
+            
         }
-        function reiniciarLineal()
-        {
+
+
+        function reiniciarLineal() {
         document.getElementById('x1').value='';
         document.getElementById('y1').value='';
         document.getElementById('x2').value='';
@@ -66,7 +72,18 @@
         document.getElementById('x3').value='';
         document.getElementById('y3').value='';
         } 
+
+        truncateDecimals = function (number, digits) {
+
+        var multiplier = Math.pow(10, digits),
+        adjustedNum = number * multiplier,
+        truncatedNum = Math[adjustedNum < 0 ? 'ceil' : 'floor'](adjustedNum);
+
+        return truncatedNum / multiplier;
+
+        };
+
         </script>
-    
+
     </body>
 </html>

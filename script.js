@@ -34,15 +34,6 @@ interpolacionLagrange2doOrden(x,x0,fx0,x1,fx1,x2,fx2){
 
 }
 
-function reiniciarLineal()
-    {
-        document.getElementById('x1').value='';
-        document.getElementById('y1').value='';
-        document.getElementById('x2').value='';
-        document.getElementById('y2').value='';
-        document.getElementById('x3').value='';
-        document.getElementById('y3').value='';
-    }
 
 
 let app = new App();
