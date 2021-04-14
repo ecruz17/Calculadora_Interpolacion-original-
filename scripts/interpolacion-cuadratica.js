@@ -8,6 +8,9 @@ function calcularCuadratica() {
     var fx2=parseFloat(document.getElementById('fx2c').value);
     var x=parseFloat(document.getElementById('xc').value);
     var fx=parseFloat(document.getElementById('fxc').value);
+    var b0=parseFloat(document.getElementById('b0c').value);
+    var b1=parseFloat(document.getElementById('b1c').value);
+    var b2=parseFloat(document.getElementById('b2c').value);
     var decimales=parseFloat(document.getElementById('decimales1').value);  
 
     if(decimales !== decimales) {
@@ -16,10 +19,14 @@ function calcularCuadratica() {
        
 
     b0 = fx0;
-    b1 = ((fx1-fx0)/(x1-x0));
+    b1 = (fx1-fx0)/(x1-x0);
     b2 = (((fx2-fx1)/x2-x1)-((fx1-fx0)/x1-x0))/(x2-x0);
     fx = b0+(b1)(x-x0)+(b2)(x-x0)(x-x1);
 
+    //document.getElementById('fxc').value=fx;
+    document.getElementById('b0c').value=b0;
+    document.getElementById('b1c').value=b1;
+    document.getElementById('b2c').value=b2;
     document.getElementById('fxc').value=fx;
 
     console.log(fx);
@@ -40,6 +47,9 @@ function reiniciarCuadratica() {
     document.getElementById('fxc').value='';
     document.getElementById('xc').value='';
     document.getElementById('decimales1').value='';
+    document.getElementById('b0c').value='';
+    document.getElementById('b1c').value='';
+    document.getElementById('b2c').value='';
 } 
 
 /*
