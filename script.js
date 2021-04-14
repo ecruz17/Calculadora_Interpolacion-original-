@@ -38,6 +38,8 @@ interpolacionLagrange2doOrden(x,x0,fx0,x1,fx1,x2,fx2){
 
 let app = new App();
 
+//x,x0,fx0,x1,fx1
+
 console.log(interpolacionLineal(6,0,5,14,7,22));
 
 /*Animacion de carga
