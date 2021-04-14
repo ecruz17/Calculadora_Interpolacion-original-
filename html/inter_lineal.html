@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de Interpolación</title>
+    <script type ="text/javascript" src="/Calculadora_Interpolacion/scripts/interpolacion-lineal.js"></script> 
+</head>
+<body>
+    <div class="grid-container">
+        <header id="header">
+            <h2>Calculadora de Interpolación</h2>
+        </header>
+        <div id="main">
+            <table class="Calculators">
+                <tbody class="IntLinealBody">
+                    <tr>
+                        <td>
+                            <a href="inter_lineal.html">Interpolación Lineal</a>
+                            <a href="inter_cuadratica.html">Interpolación Cuadrática</a>
+                            <a href="inter_lagrange1.html">Interpolación de Lagrange 1° Orden</a>
+                            <a href="inter_lagrange2.html">Interpolación de Lagrange 2° Orden</a>
+                    </tr>
+            </table>
+
+           <table class="IntLineal"> <p>Interpolación Lineal</p> 
+               <tbody class="IntLinealBody">
+                        <tr>
+                            <td><input id="x1" style="width: 145px; height: 30px;" type="text" placeholder="Valor X0"></td>
+                            <td><input id="y1" style="width: 145px; height: 30px;" type="text" placeholder="Valor F(X0)"></td>
+                        </tr>                      
+                        <tr>
+                            <td><input id="x2" style="width: 145px; height: 30px;" type="text" placeholder="Valor X1"></td>
+                            <td><input id="y2" style="width: 145px; height: 30px;" type="text" placeholder="Valor F(X1)"></td>
+                        </tr>
+                        <tr>
+                            <td><input id="x3" style="width: 145px; height: 30px;" type="text" placeholder="X (Valor conocido)"></td>
+                            <td><input id="y3" style="width: 145px; height: 30px; color: #ffffff; background-color: #8ae268;" disabled="disabled" type="text" placeholder="F(X)"></td>
+                        </tr>
+                        <tr>
+                            <td><input type="button" value="Calcular" onclick="calcularLineal()"><input type="button" value="Reiniciar" onclick="reiniciarLineal()"></td>
+                            <td><input id="decimales" style="width: 145px; height: 30px;" type="number" min="0" placeholder="N° de Decimales"></td>
+                        </tr>
+                        <tr>
+                            <td><input id="valorReal" type="text" style="width: 145px; height: 30px;" placeholder="Valor Real" disabled="disabled"></td>
+                        </tr>
+               </tbody>
+           </table>
+
+           
+        </div> 
+    <footer id="footer">©2021 Emir Cruz Maldonado & Gustavo Higuera Mayoral</footer>
+    </div>
+
+    </body>
+</html>
