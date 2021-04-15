@@ -5,13 +5,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Interpolación de Lagrange 1° Orden</title>
+    <script type = "text/javascript" src="/Calculadora_Interpolacion/scripts/interpolacion-lagrange1.js"></script>
 </head>
 <body>
     <header id="header">
         <h2>Calculadora de Interpolación</h2>
     </header>
     <table class="Calculators">
-        <tbody class="IntLinealBody">
+        <tbody class="IntLagra1Body">
             <tr>
                 <td>
                     <a href="inter_lineal.html">Interpolación Lineal</a>
@@ -22,31 +23,32 @@
     </table>
 
 <table class="IntCuadratica"> <p>Interpolación Lagrange 1° Grado</p> 
-    <tbody class="IntCuadraticaBody">
-             <tr>
-                 <td><input id="x0c" style="width: 145px; height: 30px;" type="text" placeholder="Valor X0"></td>
-                 <td><input id="fx0c" style="width: 145px; height: 30px;" type="text" placeholder="Valor F(X0)"></td>
-             </tr>
-             <tr>
-                 <td><input id="x1c" style="width: 145px; height: 30px;" type="text" placeholder="Valor X1"></td>
-                 <td><input id="fx1c" style="width: 145px; height: 30px;" type="text" placeholder="Valor F(X1)"></td>
-             </tr>
-             <tr>
-                <td><input id="x2c" style="width: 145px; height: 30px;" type="text" placeholder="Valor X2"></td>
-                <td><input id="fx2c" style="width: 145px; height: 30px;" type="text" placeholder="Valor F(X2)"></td>
+    <tbody class="IntLagra1Body">
+            <tr>
+                 <td><input id="x0l" style="width: 145px; height: 30px;" type="text" placeholder="Valor X0"></td>
+                 <td><input id="fx0l" style="width: 145px; height: 30px;" type="text" placeholder="Valor F(X0)"></td>
             </tr>
             <tr>
-                <td><input id="xc" style="width: 145px; height: 30px;" type="text" placeholder="X (Valor conocido)"></td>
-                <td><input id="fxc" style="width: 145px; height: 30px; color: #ffffff; background-color: #8ae268;" disabled="disabled" type="text" placeholder="F(X)"></td>
+                 <td><input id="x1l" style="width: 145px; height: 30px;" type="text" placeholder="Valor X1"></td>
+                 <td><input id="fx1l" style="width: 145px; height: 30px;" type="text" placeholder="Valor F(X1)"></td>
+            </tr>
+            <tr>
+                <td><input id="xl" style="width: 145px; height: 30px;"  type="text" placeholder="X"></td>
+                <td><input id="fxl" style="width: 145px; height: 30px; color: #ffffff; background-color: #8ae268;" disabled="disabled" type="text" placeholder="F1(X)"></td>
             </tr>
              <tr>
-                 <td colspan="2"><input type="button" value="Calcular" onclick="calcularCuadratica()"><input type="button" value="Reiniciar" onclick="reiniciarCuadratica()"></td>
-                 <td><input id="decimales1" style="width: 145px; height: 30px;" type="number" min="0" placeholder="N° de Decimales"></td>
+                 <td colspan="2"><input type="button" value="Calcular" onclick="calcularLagra1()"><input type="button" value="Reiniciar" onclick="reiniciarLagra1()"></td>
+                 <td><input id="decimales2" style="width: 145px; height: 30px;" type="number" min="0" placeholder="N° de Decimales"></td>
              </tr>
              <tr>
-                 <td><input id="valorReal" type="text" style="width: 145px; height: 30px;" placeholder="Valor Real" disabled="disabled"></td>
+                <td><input id="valorReal" type="text" style="width: 145px; height: 30px;" placeholder="Valor Real" disabled="disabled"></td>
+                <td><input id="check" type="checkbox" value="Calcular Error Porcentual" onclick="calcularErrorActivate()">
+                <td><input id="errorPorcentual" type="text" style="width: 145px; height: 30px; color: #ffffff; background-color: #8ae268;" disabled="disabled" placeholder="Error Porcentual" disabled></td>
+                <td><input id="btnErrorP1" type="button" value="Calcular Error %" onclick="calcularErrorL()" disabled>
              </tr>
     </tbody>
 </table>
+<footer id="footer">©2021 Emir Cruz Maldonado & Gustavo Higuera Mayoral</footer>
 </body>
+
 </html>
