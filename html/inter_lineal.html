@@ -43,15 +43,18 @@
                             <td><input id="decimales" style="width: 145px; height: 30px;" type="number" min="0" placeholder="N° de Decimales"></td>
                         </tr>
                         <tr>
-                            <td><input id="valorReal" type="text" style="width: 145px; height: 30px;" placeholder="Valor Real" disabled="disabled"></td>
+                            <td><input id="valorReal1" type="text" style="width: 145px; height: 30px;" placeholder="Valor Real" disabled></td>
+                            <td><input id="check" type="checkbox" value="Calcular Error Porcentual" onclick="calcularErrorActivate()">
+                            <td><input id="errorPorcentual" type="text" style="width: 145px; height: 30px; color: #ffffff; background-color: #8ae268;" disabled="disabled" placeholder="Error Porcentual" disabled></td>
+                            <td><input id="btnErrorP1" type="button" value="Calcular Error %" onclick="calcularErrorL()" disabled>
                         </tr>
                </tbody>
            </table>
 
            
         </div> 
-    <footer id="footer">©2021 Emir Cruz Maldonado & Gustavo Higuera Mayoral</footer>
+    
     </div>
-
+    <footer id="footer">©2021 Emir Cruz Maldonado & Gustavo Higuera Mayoral</footer>
     </body>
 </html>

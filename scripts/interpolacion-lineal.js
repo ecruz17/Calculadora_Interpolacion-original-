@@ -1,3 +1,4 @@
+
 function calcularLineal() {
 
     var x1=parseFloat(document.getElementById('x1').value);
@@ -26,6 +27,9 @@ document.getElementById('y2').value='';
 document.getElementById('x3').value='';
 document.getElementById('y3').value='';
 document.getElementById('decimales').value='';
+document.getElementById('check').value='';
+document.getElementById('errorPorcentual').value='';
+document.getElementById('valorReal1').value='';
 } 
 
 truncateDecimals = function (number, digits) {
@@ -37,3 +41,21 @@ truncatedNum = Math[adjustedNum < 0 ? 'ceil' : 'floor'](adjustedNum);
 return truncatedNum / multiplier;
 
 };
+
+function calcularErrorActivate() {
+    document.getElementById('check').onchange = function() {
+        document.getElementById('valorReal1').disabled = !this.checked;
+        document.getElementById('btnErrorP1').disabled = !this.checked;
+    };
+    
+}
+
+function calcularErrorL() {
+
+    var errorP=parseFloat(document.getElementById('errorPorcentual').value);
+    var ep=parseFloat(document.getElementById('valorReal1').value);
+
+    errorP = ((this.res-ep)/ep)*100;
+    document.getElementById('errorPorcentual').value=errorP;
+    
+}

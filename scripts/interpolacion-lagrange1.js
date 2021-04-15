@@ -39,3 +39,21 @@ truncateDecimals = function (number, digits) {
     return truncatedNum / multiplier;
     
 };
+
+function calcularErrorActivate() {
+    document.getElementById('check').onchange = function() {
+        document.getElementById('valorReal').disabled = !this.checked;
+        document.getElementById('btnErrorP1').disabled = !this.checked;
+    };
+    
+}
+
+function calcularErrorL() {
+
+    var errorP=parseFloat(document.getElementById('errorPorcentual').value);
+    var ep=parseFloat(document.getElementById('valorReal1').value);
+
+    errorP = ((this.res-ep)/ep)*100;
+    document.getElementById('errorPorcentual').value=errorP;
+    
+}
