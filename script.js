@@ -16,10 +16,7 @@ obtenerError(fxreal,fxinterpolado){
 }
 
 interpolacionCuadratica(x,x0,fx0,x1,fx1,x2,fx2){
-    let b0=fx0;
-    let b1=(fx1-fx0)/(x1-x0);
-    let b2=(((fx2-fx1)/x2-x1)-((fx1-fx0)/x1-x0))/(x2-x0);
-    return b0+(b1)(x-x0)+(b2)(x-x0)(x-x1);
+    return fx0+((fx1-fx0)/(x1-x0))(x-x0)+((((fx2-fx1)/x2-x1)-((fx1-fx0)/x1-x0))/(x2-x0))(x-x0)(x-x1);
 }
 
 interpolacionLagrange1erOrden(x,x0,fx0,x1,fx1){
